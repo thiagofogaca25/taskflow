@@ -1,0 +1,50 @@
+* { box-sizing: border-box; }
+:root {
+  font-family: Arial, sans-serif;
+  color: #212121;
+  background: #ffffff;
+  line-height: 1.5;
+}
+body { margin: 0; background: #fff; color: #212121; }
+body.escuro { background: #121212; color: #fff; }
+body.escuro .cabecalho, body.escuro .rodape { background: #1d1d1d; }
+body.escuro .campo input, body.escuro .campo textarea, body.escuro select, body.escuro .tarefa {
+  background: #1f1f1f; color: #fff; border-color: #aaa;
+}
+.container { width: min(960px, 92%); margin: auto; }
+.cabecalho { background: #005fcc; color: #fff; }
+.cabecalho .container { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.logo { color: #fff; font-size: 1.4rem; font-weight: 700; text-decoration: none; }
+nav { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+nav a, nav button { color: #fff; background: transparent; border: 0; font: inherit; cursor: pointer; text-decoration: underline; }
+main { padding: 32px 0; }
+section { margin-bottom: 36px; }
+.hero { padding: 24px 0; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 8px; }
+h2 { margin-top: 0; }
+form { max-width: 650px; }
+.campo { margin-bottom: 16px; }
+label { display: block; font-weight: 700; margin-bottom: 6px; }
+input, textarea, select { width: 100%; padding: 10px; border: 2px solid #666; border-radius: 6px; font: inherit; background: #fff; color: #212121; }
+.btn { padding: 10px 16px; border: 2px solid transparent; border-radius: 6px; font-weight: 700; cursor: pointer; }
+.primario { background: #005fcc; color: #fff; }
+.lista-topo { display: grid; grid-template-columns: 1fr 140px; gap: 8px 16px; align-items: center; }
+.lista-topo h2 { grid-column: 1 / -1; }
+.status { min-height: 24px; }
+.tarefas { list-style: none; padding: 0; display: grid; gap: 12px; }
+.tarefa { border: 2px solid #bbb; border-radius: 8px; padding: 16px; background: #fff; }
+.tarefa.concluida { opacity: .8; }
+.tarefa h3 { margin: 0 0 6px; }
+.tarefa p { margin: 0 0 12px; }
+.acoes { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn-sec { background: #fff; color: #212121; border: 2px solid #555; }
+.btn-danger { background: #b00020; color: #fff; }
+.rodape { padding: 24px 0; background: #f2f2f2; }
+.skip-link { position: absolute; left: -9999px; top: 8px; padding: 8px; background: #fff; color: #000; z-index: 10; }
+.skip-link:focus { left: 8px; }
+:focus-visible { outline: 3px solid #ffbf00; outline-offset: 3px; }
+@media (max-width: 600px) {
+  .cabecalho .container { align-items: flex-start; padding: 14px 0; flex-direction: column; }
+  nav { width: 100%; }
+  .lista-topo { grid-template-columns: 1fr; }
+}
