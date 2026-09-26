@@ -93,3 +93,34 @@ temaBtn.addEventListener('click', () => {
 });
 
 renderizar();
+
+
+// Filtro de tarefas
+let filtroAtual = "todas";
+
+function filtrarTarefas(tarefas) {
+  if (filtroAtual === "pendentes") {
+    return tarefas.filter(tarefa => !tarefa.concluida);
+  }
+
+  if (filtroAtual === "concluidas") {
+    return tarefas.filter(tarefa => tarefa.concluida);
+  }
+
+  return tarefas;
+}
+
+document.addEventListener("click", (evento) => {
+  const botao = evento.target.closest("[data-filtro]");
+  if (!botao) return;
+
+  filtroAtual = botao.dataset.filtro;
+
+  document.querySelectorAll("[data-filtro]").forEach((item) => {
+    item.classList.toggle("ativo", item === botao);
+  });
+
+  if (typeof renderizarTarefas === "function") {
+    renderizarTarefas();
+  }
+});

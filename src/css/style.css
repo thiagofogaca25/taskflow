@@ -48,3 +48,19 @@ input, textarea, select { width: 100%; padding: 10px; border: 2px solid #666; bo
   nav { width: 100%; }
   .lista-topo { grid-template-columns: 1fr; }
 }
+
+
+.task-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.filtro {
+  cursor: pointer;
+}
+
+.filtro.ativo {
+  font-weight: 700;
+}
